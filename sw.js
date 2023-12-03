@@ -1,9 +1,9 @@
-var cacheName = 'egui-template-pwa';
+var cacheName = 'fhackit-pwa';
 var filesToCache = [
   './',
   './index.html',
-  './eframe_template.js',
-  './eframe_template_bg.wasm',
+  './fhackit_template.js',
+  './fhackit_bg.wasm',
 ];
 
 /* Start the service worker and cache all of the app's content */
