@@ -75,3 +75,10 @@ p {
     margin: 10px 0; /* Add vertical spacing */
     /* line-height: 1.6; Improve readability with line spacing */
 }
+
+/* Footer styles */
+footer {
+    text-align: right; /* Align text in the footer to the right */
+    padding: 10px 20px; /* Add padding for spacing */
+    font-size: 14px; /* Match the global font size */
+}
