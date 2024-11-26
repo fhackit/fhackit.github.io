@@ -35,7 +35,7 @@ function formatDateWithTimezone(date) {
         second: "numeric",
         timeZoneName: "short",
     }).format(date);
-} 
+}
 
 // Fetch the latest commit that modified the file
 async function fetchLastModified(filePath) {
