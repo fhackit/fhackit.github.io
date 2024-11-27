@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>fhack it - 404</title>
+    <title>fhack it - notes on artificial life</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/x-icon" href="favicon.ico">
-    <script src="last_modified.js" defer></script>
+
+    <script>
+        // Redirect any 404 request to index.html while keeping the path
+        const currentPath = window.location.pathname;
+        window.location.href = `./index.html`;
+    </script>
 </head>
-
 <body>
-    <header>
-        <h1>404</h1>
-    </header>
 </body>
-
 </html>
