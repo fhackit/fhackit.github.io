@@ -1,95 +1,150 @@
 ---
-import Layout from '@layouts/Default.astro';
-import RecentBlogPosts from '@components/generic/RecentBlogPosts.astro';
-import MobileSocials from '@components/home/MobileSocials.astro';
-import { Pill } from '@eliancodes/brutal-ui';
-import { Button } from '@eliancodes/brutal-ui';
-import { Card } from '@eliancodes/brutal-ui';
 
-const builtWith = [
-  { name: 'Astro', url: 'https://astro.build/' },
-  { name: 'UnoCSS', url: 'https://uno.antfu.me/' },
-  {
-    name: 'Content Collections',
-    url: 'https://docs.astro.build/en/guides/content-collections/',
-  },
-  { name: 'RSS', url: 'https://docs.astro.build/en/guides/rss/' },
-  {
-    name: 'Sitemap',
-    url: 'https://docs.astro.build/en/guides/integrations-guide/sitemap/',
-  },
-  { name: 'Vercel', url: 'https://vercel.com' },
-  { name: 'TypeScript', url: 'https://www.typescriptlang.org/' },
-];
 ---
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta name="generator" content={Astro.generator} />
+        <title>fhack it - notes on artificial life</title>
+        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+        <script src="/js/last_modified.js" defer></script>
+    </head>
 
-<Layout
-  title='Home'
-  pageTitle='Brutal Theme | Home'
-  description='Brutal is a minimalistic, neobrutalism theme for Astro.'
->
-  <main class='bg-pink p-6'>
-    <MobileSocials />
-    <section id='about' class='grid md:grid-cols-8 gap-8 mt-4'>
-      <h2 class='hidden'>About Brutal</h2>
-      <div class='col-span-4'>
-        <Card>
-          <div class='flex flex-col justify-between items-start gap-4'>
-            <p class='mt-4 outfit text-2xl md:text-5xl lg:text-7xl'>
-              Brutal theme for <a
-                class='text-white'
-                target='_blank'
-                href='https://astro.build/'>Astro</a
-              >
-            </p>
-            <p class='mt-2 outfit text-xl md:text-3xl lg:text-5xl'>
-              A minimalistic, neobrutalism theme for Astro.
-            </p>
-            <Button target={'_self'} href='/blog/'>
-              Check out the blog &rarr;
-            </Button>
-          </div>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-8 dm-serif'>
-            Brutal is built with
-          </h2>
-          <ul class='flex gap-4 flex-wrap'>
-            {
-              builtWith.map((item) => (
-                <li>
-                  <Pill>
-                    <a
-                      class='sanchez'
-                      href={item.url}
-                      target='_blank'
-                      title={`Go to ${item.name}`}
-                    >
-                      {item.name}
-                    </a>
-                  </Pill>
-                </li>
-              ))
-            }
-          </ul>
-        </Card>
-      </div>
-      <div class='col-span-2'>
-        <Card>
-          <h2 class='text-2xl md:text-4xl lg:text-6xl mb-4 dm-serif'>
-            What is Brutal?
-          </h2>
-          <p class='poppins'>
-            Brutal is a theme built with Astro, UnoCSS by <a
-              href='https://www.elian.codes/'>Elian</a
-            >. It's a simple, fast, and modern theme that is easy to use and
-            customize. Mainly meant to power blogs and personal websites.
-          </p>
-        </Card>
-      </div>
-    </section>
-    <RecentBlogPosts />
-  </main>
-</Layout>
+    <body>
+        <header>
+            <h1>fhack it</h1>
+            <!-- <h2>home</h2> -->
+        </header>
+        <!-- <main>
+            <p>entries</p>
+            <nav>
+                <ul>
+                    <li>
+                        <a href="/entries/0_20241126.html">0_20241126 - zero</a>
+                    </li>
+                </ul>
+            </nav>
+        </main> -->
+        <footer>
+            &copy; fhack it
+        </footer>
+    </body>
+</html>
+
+<style>
+    /* Global styles */
+    * {
+        background-color: #101010; /* Dark granite background */
+        color: #39ff14; /* Neon green terminal text */
+        font-family: "Courier New", Courier, monospace; /* Terminal font */
+        font-size: 14px; /* Consistent terminal font size */
+        font-weight: normal; /* Remove bold from all elements */
+        margin: 0; /* Remove default spacing */
+        padding: 0; /* Remove default spacing */
+        text-align: center; /* Center text horizontally by default */
+        box-sizing: border-box; /* Include padding/borders in element dimensions */
+    }
+
+    /* Body styles */
+    body {
+        text-align: left; /* Override global centering for body content */
+        padding: 20px; /* Add padding to create some spacing */
+    }
+
+    /* Header styles */
+    header {
+        text-align: center; /* Keep the header centered */
+        margin-bottom: 20px; /* Add space below the header */
+    }
+
+    header h1 a {
+        color: inherit; /* Inherit text color from header */
+        text-decoration: none; /* Remove underline by default */
+    }
+
+    header h1 a:hover {
+        text-decoration: none; /* Optional: Add underline on hover for clarity */
+        color: white;
+    }
+
+    /* Navigation styles */
+    nav {
+        width: 100%; /* Ensure the nav spans the full width of the page */
+        display: flex; /* Use flexbox for layout */
+        justify-content: flex-start; /* Align navigation content to the left */
+        margin: 20px 0; /* Add spacing above and below the nav */
+        padding: 0 20px; /* Add padding to the left and right for spacing */
+    }
+
+    nav ul {
+        list-style-type: none; /* Remove default bullets */
+        margin: 0; /* Reset margin */
+        padding: 0; /* Reset padding */
+    }
+
+    nav ul li {
+        font-size: inherit; /* Ensure it inherits global font size */
+        /* line-height: 1.5; Add spacing for better readability */
+    }
+
+    nav ul li::before {
+        content: "> "; /* Add a custom bullet */
+        color: inherit; /* Ensure the bullet matches text color */
+    }
+
+    nav ul li a {
+        color: inherit; /* Ensure link color matches text color */
+        font-size: inherit; /* Ensure link font size matches global font size */
+        text-decoration: none; /* Remove underlines from links */
+    }
+
+    nav ul li a:hover {
+        text-decoration: none; /* Optional: Add underline on hover for clarity */
+        color: white;
+    }
+
+    /* Paragraph styles (ensure left-aligned text) */
+    p {
+        text-align: left; /* Ensure paragraphs are left-aligned */
+        margin: 10px 0; /* Add vertical spacing */
+        /* line-height: 1.6; Improve readability with line spacing */
+    }
+
+    /* Footer styles */
+    footer {
+        text-align: center; /* Align text in the footer to the right */
+        padding: 10px 20px; /* Add padding for spacing */
+        font-size: 14px; /* Match the global font size */
+    }
+
+    /* Styles specific to 404 pages */
+    .not-found {
+        text-align: center; /* Center the content */
+        display: flex; /* Use flexbox for layout */
+        flex-direction: column; /* Stack content vertically */
+        justify-content: center; /* Center content vertically */
+        align-items: center; /* Center content horizontally */
+        height: 100vh; /* Full height of the viewport */
+        margin: 0 auto; /* Center container */
+    }
+
+    .not-found h1 {
+        margin-bottom: 20px; /* Add space below the header */
+    }
+
+    .not-found p {
+        margin-bottom: 20px; /* Add space below the paragraph */
+    }
+
+    .not-found a {
+        color: #39ff14; /* Neon green for links */
+        text-decoration: none; /* Remove underlines from links */
+    }
+
+    .not-found a:hover {
+        color: white; /* Change to white on hover */
+    }
+</style>
