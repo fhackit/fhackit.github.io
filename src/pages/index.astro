@@ -8,9 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <title>fhack it - notes on artificial life</title>
-        <link rel="stylesheet" href="/css/style.css" />
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
-        <script src="/js/last_modified.js" defer></script>
     </head>
 
     <body>
@@ -29,7 +27,7 @@
             </nav>
         </main> -->
         <footer>
-            &copy; fhack it
+            &copy; 2025 fhack it
         </footer>
     </body>
 </html>
@@ -57,7 +55,8 @@
     /* Header styles */
     header {
         text-align: center; /* Keep the header centered */
-        margin-bottom: 20px; /* Add space below the header */
+        margin-bottom: 1em; /* Add space below the header */
+        margin-top: 0.5em;
     }
 
     header h1 a {
@@ -79,29 +78,29 @@
         padding: 0 20px; /* Add padding to the left and right for spacing */
     }
 
-    nav ul {
+    nav > ul {
         list-style-type: none; /* Remove default bullets */
         margin: 0; /* Reset margin */
         padding: 0; /* Reset padding */
     }
 
-    nav ul li {
+    nav > ul > li {
         font-size: inherit; /* Ensure it inherits global font size */
         /* line-height: 1.5; Add spacing for better readability */
     }
 
-    nav ul li::before {
+    nav > ul > li::before {
         content: "> "; /* Add a custom bullet */
         color: inherit; /* Ensure the bullet matches text color */
     }
 
-    nav ul li a {
+    nav > ul > li > a {
         color: inherit; /* Ensure link color matches text color */
         font-size: inherit; /* Ensure link font size matches global font size */
         text-decoration: none; /* Remove underlines from links */
     }
 
-    nav ul li a:hover {
+    nav > ul > li > a:hover {
         text-decoration: none; /* Optional: Add underline on hover for clarity */
         color: white;
     }
@@ -131,20 +130,20 @@
         margin: 0 auto; /* Center container */
     }
 
-    .not-found h1 {
+    .not-found > h1 {
         margin-bottom: 20px; /* Add space below the header */
     }
 
-    .not-found p {
+    .not-found > p {
         margin-bottom: 20px; /* Add space below the paragraph */
     }
 
-    .not-found a {
+    .not-found > a {
         color: #39ff14; /* Neon green for links */
         text-decoration: none; /* Remove underlines from links */
     }
 
-    .not-found a:hover {
+    .not-found > a:hover {
         color: white; /* Change to white on hover */
     }
 </style>
