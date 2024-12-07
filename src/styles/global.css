@@ -1,27 +1,47 @@
 * {
-    background-color: #101010; /* Dark granite background */
-  
+    background-color: #101010;
+    /* Dark granite background */
+
 }
 
 main {
-    color: #39ff14; /* Neon green terminal text */
+    color: #39ff14;
+    /* Neon green terminal text */
     /* font: 0.6rem Inconsolata, monospace; */
-    font-family: "Courier New", Courier, monospace; /* Terminal font */
-    font: 0.6rem "Courier New", Courier, monospace; /* Terminal font */
-    /* text-shadow: 0 0 5px #C8C8C8; */
+    font-family: "Courier New", Courier, monospace;
+    /* Terminal font */
+    font: 0.6rem "Courier New", Courier, monospace;
+    /* Terminal font */
     text-align: center;
-    font-weight: normal; /* Remove bold from all elements */
-    margin: 0; /* Remove default spacing */
-    padding: 0; /* Remove default spacing */
-    box-sizing: border-box; 
+    font-weight: normal;
+    /* Remove bold from all elements */
+    margin: 0;
+    /* Remove default spacing */
+    padding: 0;
+    /* Remove default spacing */
+    box-sizing: border-box;
 }
 
 h1 {
     font-size: inherit;
-    font-weight: inherit; /* Remove bold from all elements */
+    font-weight: inherit;
+    /* Remove bold from all elements */
+
 }
 
-h1 + h2 {
+h2 {
     font-size: inherit;
-    font-weight: inherit; /* Remove bold from all elements */
+    font-weight: inherit;
+    /* Remove bold from all elements */
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+    padding: 0.5rem 1rem;
+}
+
+a:hover {
+    color: white;
+
 }

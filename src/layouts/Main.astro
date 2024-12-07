@@ -1,5 +1,9 @@
 ---
 import "../styles/global.css";
+import "../components/Footer.astro";
+import Navigation from "../components/Navigation.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
 ---
 
 <!doctype html>
@@ -8,13 +12,16 @@ import "../styles/global.css";
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
-        <meta name="description" content="notes on artificial life" />
-        <title>fhack it - notes on artificial life</title>
+        <meta name="description" content="al and stuff" />
+        <title>fhack it - al and stuff</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </head>
     <body>
         <main>
             <slot />
+            <Header />
+            <Navigation />
+            <Footer />
         </main>
     </body>
 </html>

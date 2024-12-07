@@ -1,0 +1,34 @@
+---
+---
+
+<nav>
+    <ul>
+        <li><a href="#">posts</a></li>
+
+    </ul>
+</nav>
+
+<style>
+    nav {
+        display: flex;
+        align-items: flex-start; /* Align items along the cross-axis */
+        justify-content: flex-start; /* Align items along the main-axis (left-aligned by default) */
+    }
+
+    ul {
+        display: flex;
+        flex-wrap: wrap; /* Correct syntax for flex-wrap */
+        padding: 0;
+        margin: 0 auto; /* Center the `ul` horizontally within `nav` */
+    }
+
+    nav li {
+        list-style: none; /* Remove bullets from list items */
+        margin-right: 0.5em; /* Add spacing between items */
+        margin-left: 0.5em;
+    }
+    
+    a::after {
+        content: " →";
+    }
+</style>
