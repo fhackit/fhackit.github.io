@@ -13,14 +13,15 @@ import Header from "../components/Header.astro";
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content="al and stuff" />
-        <title>fhack it - al and stuff</title>
+        <title>fhack it</title>
         <link rel="icon" type="image/x-icon" href="/favicon.ico" />
     </head>
     <body>
         <main>
-            <slot />
+            <!-- <slot /> -->
             <Header />
             <Navigation />
+            <slot />
             <Footer />
         </main>
     </body>
