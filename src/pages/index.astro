@@ -1,7 +1,8 @@
 ---
 import Main from "../layouts/Main.astro";
+import { siteMetadata } from "../siteMetadata";
 ---
 
-<Main />
+<Main title={`${siteMetadata.title} → home`}/>
 
 

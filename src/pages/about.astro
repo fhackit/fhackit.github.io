@@ -1,0 +1,15 @@
+---
+import Main from "../layouts/Main.astro";
+import { siteMetadata } from "../siteMetadata";
+---
+
+<Main title={`${siteMetadata.title} → about`}>
+    <div>zero</div>
+</Main>
+
+<style>
+    div {
+        padding: 3em;
+        border: 1px solid #39ff14;
+    }
+</style>

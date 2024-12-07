@@ -10,7 +10,7 @@ main {
     /* font: 0.6rem Inconsolata, monospace; */
     font-family: "Courier New", Courier, monospace;
     /* Terminal font */
-    font: 0.6rem "Courier New", Courier, monospace;
+    font: 1rem "Courier New", Courier, monospace;
     /* Terminal font */
     text-align: center;
     font-weight: normal;

@@ -4,6 +4,11 @@ import "../components/Footer.astro";
 import Navigation from "../components/Navigation.astro";
 import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
+
+type Props = {
+    title:string;
+}
+const {title} = Astro.props;
 ---
 
 <!doctype html>
@@ -13,7 +18,7 @@ import Header from "../components/Header.astro";
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="generator" content={Astro.generator} />
         <meta name="description" content="al and stuff" />
-        <title>fhack it</title>
+        <title>{title}</title>
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
     </head>
     <body>
@@ -21,7 +26,7 @@ import Header from "../components/Header.astro";
             <!-- <slot /> -->
             <Header />
             <Navigation />
-            <slot />
+            <slot  />
             <Footer />
         </main>
     </body>
