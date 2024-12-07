@@ -4,15 +4,53 @@ import { siteMetadata } from "../siteMetadata";
 ---
 
 <Main title={`${siteMetadata.title} → about`}>
-    <div>zero</div>
+    <h3>sub1</h3>
+    <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. sed do eiusmod
+        tempor incididunt ut labore et dolore magna aliqua. ut enim ad minim
+        veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea
+        commodo consequat. duis aute irure dolor in reprehenderit in voluptate
+        velit esse cillum dolore eu fugiat nulla pariatur.
+    </p>
+
+    <h3>sub2</h3>
+    <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. vivamus at
+        augue eget arcu dictum varius. nunc sed velit dignissim sodales ut eu
+        sem integer vitae. sit amet purus gravida quis blandit turpis cursus in.
+        cursus mattis molestie a iaculis at erat pellentesque adipiscing.
+    </p>
+
+    <h3>sub3</h3>
+    <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. aliquet risus
+        feugiat in ante metus dictum at. ac felis donec et odio pellentesque. in
+        metus vulputate eu scelerisque felis imperdiet proin. nunc aliquet
+        bibendum enim facilisis gravida. sit amet nulla facilisi morbi tempus
+        iaculis urna.
+    </p>
+
+    <h3>sub4</h3>
+    <p>
+        lorem ipsum dolor sit amet, consectetur adipiscing elit. maecenas
+        volutpat blandit aliquam etiam erat velit scelerisque. dictum varius
+        duis at consectetur lorem donec massa. pellentesque nec nam aliquam sem
+        et tortor consequat. et egestas quis ipsum suspendisse ultrices gravida
+        dictum fusce ut.
+    </p>
 </Main>
 
 <style>
-    div {
-        padding: 1em;
-        margin: 1em;
-        border: 0.1em solid #39ff14;
-        text-align: left;
-        border-color: #228B22;
+    h3 {
+        font-size: inherit;
+        font-weight: inherit;
+        margin-bottom: 0.1em;
+    }
+    h3::before {
+        content: ":";
+    }
+    h3 + p {
+        margin-top: 0em;
+        padding-left: 0.5em;
     }
 </style>
