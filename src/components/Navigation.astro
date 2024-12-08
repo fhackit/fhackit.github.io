@@ -14,21 +14,32 @@
 <style>
     nav {
         display: flex;
-        align-items: flex-start; /* Align items along the cross-axis */
-        justify-content: flex-start; /* Align items along the main-axis (left-aligned by default) */
+        justify-content: center; /* Center the navigation links */
+        align-items: center; /* Align items vertically */
     }
 
     .navigation__links {
         display: flex;
-        flex-wrap: wrap; /* Correct syntax for flex-wrap */
+        flex-wrap: wrap; /* Allow wrapping to a new row if there isn’t enough space */
+        justify-content: center; /* Center-align wrapped items */
+        gap: 0.5em; /* Add spacing between items */
         padding: 0;
-        margin: 0 auto; /* Center the `ul` horizontally within `nav` */
+        margin: 0 auto;
     }
 
     .navigation__links li {
-        list-style: none; /* Remove bullets from list items */
-        margin-right: 0.5em; /* Add spacing between items */
-        margin-left: 0.5em;
+        list-style: none; /* Remove bullets */
+    }
+
+    .navigation__links a {
+        text-decoration: none;
+        color: inherit;
+        padding: 0.5rem 1rem;
+        display: inline-block; /* Ensure proper spacing and wrapping */
+    }
+
+    .navigation__links a:hover {
+        color: white;
     }
 
     .navigation__links a::after {
@@ -37,32 +48,30 @@
 
     .navigation__links a::before {
         content: "[ ] ";
-
     }
 
     .navigation__links a.active::before {
         content: "[x] ";
-
     }
 
     .navigation__links a.active::after {
         content: "\00A0\00A0";
     }
 
-    .navigation__links a {
-        text-decoration: none;
-        color: inherit;
-        padding: 0.5rem 1rem;
-    }
-
     .navigation__links a.active:hover {
         color: inherit;
         cursor: default;
     }
-    .navigation__links a:hover {
-        color: white;
-    }
 
+    @media (max-width: 768px) {
+        .navigation__links {
+            gap: 0.3em; /* Slightly smaller gap on mobile */
+        }
+
+        .navigation__links a {
+            padding: 0.5rem 0.8rem; /* Reduce padding for smaller screens */
+        }
+    }
 </style>
 <script>
     const { pathname } = window.location;
@@ -73,6 +82,5 @@
     if (activeNavigationElement) {
         activeNavigationElement.classList.add("active");
         activeNavigationElement.removeAttribute("href"); // Remove the href attribute
-
     }
 </script>
