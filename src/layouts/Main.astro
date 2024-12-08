@@ -9,8 +9,9 @@ import LastChanged from "../components/LastChanged.astro";
 
 type Props = {
     title: string;
+    last_modified: string;
 };
-const { title } = Astro.props;
+const { title, last_modified } = Astro.props;
 ---
 
 <!doctype html>
@@ -31,7 +32,7 @@ const { title } = Astro.props;
             <DynamicContent>
                 <slot />
             </DynamicContent>
-            <LastChanged />
+            <LastChanged last_modified={`${last_modified}`}/>
             <Footer />
         </main>
     </body>
