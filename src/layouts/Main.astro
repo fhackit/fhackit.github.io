@@ -25,15 +25,24 @@ const { title, last_modified } = Astro.props;
         <link rel="icon" type="image/x-icon" href="favicon.ico" />
     </head>
     <body>
-        <main>
+        <main class="content">
             <!-- <slot /> -->
             <Header />
             <Navigation />
             <DynamicContent>
                 <slot />
             </DynamicContent>
-            <LastChanged last_modified={`${last_modified}`}/>
-            <Footer />
+            <LastChanged last_modified={`${last_modified}`} />
         </main>
+        <Footer />
     </body>
 </html>
+
+<style>
+    .content {
+    flex: 1; /* Allow main content to grow */
+    display: flex; /* Use flexbox for child alignment */
+    flex-direction: column; /* Stack children vertically */
+}
+
+</style>
