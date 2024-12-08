@@ -1,24 +1,23 @@
 * {
     background-color: #101010;
-    /* Dark granite background */
+    text-transform: lowercase;
+    color: #39ff14;
+    font-family: "Courier New", Courier, monospace;
+    font: 1rem "Courier New", Courier, monospace;
+}
 
+body {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure full height of the viewport */
 }
 
 main {
-    color: #39ff14;
-    /* Neon green terminal text */
-    /* font: 0.6rem Inconsolata, monospace; */
-    font-family: "Courier New", Courier, monospace;
-    /* Terminal font */
-    font: 1rem "Courier New", Courier, monospace;
-    /* Terminal font */
     text-align: center;
     font-weight: normal;
-    /* Remove bold from all elements */
     margin: 0;
-    /* Remove default spacing */
     padding: 0;
-    /* Remove default spacing */
     box-sizing: border-box;
 
 }
