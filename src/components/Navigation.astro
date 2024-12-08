@@ -35,4 +35,26 @@
     a::after {
         content: " →";
     }
+
+    a::before {
+        content: "[ ] ";
+    }
+
+    /* a.active {
+        color: white;
+        
+    } */
+    a.active::before {
+        content: "[x] ";
+    }
+
 </style>
+<script>
+    const {pathname} = window.location;
+    const activeNavigationElement = document.querySelector(`nav a[href="${pathname}"]`);
+
+    if (activeNavigationElement) {
+        activeNavigationElement.classList.add("active");
+    }
+
+</script>

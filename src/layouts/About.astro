@@ -21,9 +21,10 @@ const { title, subtitle, created, last_modified, author } =
 >
     <h3>
         {subtitle}
-        <slot />
     </h3>
-
+    <div>
+        <slot />
+    </div>
     <style>
         h3 {
             font-size: inherit;
@@ -33,9 +34,10 @@ const { title, subtitle, created, last_modified, author } =
         h3::before {
             content: ":";
         }
-        h3 + p {
+
+        div {
             margin-top: 0em;
-            padding-left: 0.5em;
+            padding-left: 1em;
         }
     </style>
 </Main>
