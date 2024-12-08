@@ -71,7 +71,7 @@ const formatDateWithTimezone = (dateString: string): string => {
 ---
 
 <div>
-    <p title={last_modified ? formatDateWithTimezone(last_modified) : "Unknown"}>
+    <p class="last__changed" title={last_modified ? formatDateWithTimezone(last_modified) : "Unknown"}>
         Last changed: {last_modified ? timeSince(last_modified) : "Unknown"} 
 </div>
 
@@ -80,7 +80,8 @@ const formatDateWithTimezone = (dateString: string): string => {
         text-align: right;
         margin: 1em;
     }
-    div + p {
-        cursor: help; /* Indicate that the text has a tooltip */
+    .last__changed {
+        font-size: smaller;
+        cursor: default;
     }
 </style>

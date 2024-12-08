@@ -1,14 +1,13 @@
 ---
+
 ---
 
 <nav>
-    <ul>
+    <ul class="navigation__links">
         <li><a href="/about">about</a></li>
         <li><a href="#">blog</a></li>
         <li><a href="#">books</a></li>
         <li><a href="#">links</a></li>
-
-
     </ul>
 </nav>
 
@@ -19,42 +18,59 @@
         justify-content: flex-start; /* Align items along the main-axis (left-aligned by default) */
     }
 
-    ul {
+    .navigation__links {
         display: flex;
         flex-wrap: wrap; /* Correct syntax for flex-wrap */
         padding: 0;
         margin: 0 auto; /* Center the `ul` horizontally within `nav` */
     }
 
-    nav li {
+    .navigation__links li {
         list-style: none; /* Remove bullets from list items */
         margin-right: 0.5em; /* Add spacing between items */
         margin-left: 0.5em;
     }
-    
-    a::after {
+
+    .navigation__links a::after {
         content: " →";
     }
 
-    a::before {
+    .navigation__links a::before {
         content: "[ ] ";
+
     }
 
-    /* a.active {
-        color: white;
-        
-    } */
-    a.active::before {
+    .navigation__links a.active::before {
         content: "[x] ";
+
+    }
+
+    .navigation__links a.active::after {
+        content: "\00A0\00A0";
+    }
+
+    .navigation__links a {
+        text-decoration: none;
+        color: inherit;
+        padding: 0.5rem 1rem;
+    }
+
+    .navigation__links a.active:hover {
+        color: inherit;
+        cursor: default;
+    }
+    .navigation__links a:hover {
+        color: white;
     }
 
 </style>
 <script>
-    const {pathname} = window.location;
-    const activeNavigationElement = document.querySelector(`nav a[href="${pathname}"]`);
+    const { pathname } = window.location;
+    const activeNavigationElement = document.querySelector(
+        `nav a[href="${pathname}"]`,
+    );
 
     if (activeNavigationElement) {
         activeNavigationElement.classList.add("active");
     }
-
 </script>
