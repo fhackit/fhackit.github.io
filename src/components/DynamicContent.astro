@@ -1,19 +1,63 @@
-<div class="dynamic__content">
-    <slot />
+---
+import Loading from "./Loading.astro";
+
+// Calculate the delay on the server side
+const delay = Math.floor(Math.random() * (5000 - 2000 + 1)) + 2000;
+---
+
+<div id="dynamicContent" class="dynamic__content" data-delay={delay}>
+    <div id="loadingComponent" class="loading-center">
+        <Loading delay={delay} />
+    </div>
+    <div id="slotComponent" style="display: none;">
+        <slot />
+    </div>
 </div>
 
 <style>
     .dynamic__content {
-        /* Border styling */
         border: 0.01em solid #37ff142a;
-        border-width: 0.01em 0.01em 0.01em 0.01em;
         margin: 1em;
         padding: 0.5em;
-        text-align: left;
-
-        /* Stretch to fill space */
         flex: 1;
         display: flex;
         flex-direction: column;
+        justify-content: center; /* Center content vertically */
+        position: relative; /* For absolute positioning of children */
+        text-align: left;
+    }
+
+    /* Center the loading component */
+    .loading-center {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%; /* Stretch to full width of the container */
+        height: 100%; /* Stretch to full height of the container */
+        position: absolute; /* Position centrally within DynamicContent */
+    }
+
+    #slotComponent {
+        width: 100%;
     }
 </style>
+
+<script is:inline>
+    document.addEventListener('DOMContentLoaded', () => {
+        // Get the delay value from the data attribute
+        const dynamicContent = document.getElementById('dynamicContent');
+        const delay = parseInt(dynamicContent.getAttribute('data-delay'), 10);
+
+        const loadingComponent = document.getElementById('loadingComponent');
+        const slotComponent = document.getElementById('slotComponent');
+
+        setTimeout(() => {
+            if (loadingComponent) {
+                loadingComponent.style.display = 'none';
+            }
+            if (slotComponent) {
+                slotComponent.style.display = 'block';
+            }
+        }, delay);
+    });
+</script>
