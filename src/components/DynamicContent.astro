@@ -2,7 +2,7 @@
 import Loading from "./Loading.astro";
 
 // Calculate the delay on the server side
-const delay = Math.floor(Math.random() * 5000);
+const delay = Math.floor(Math.random() * 1000);
 ---
 
 <div id="dynamicContent" class="dynamic__content" data-delay={delay}>
@@ -22,9 +22,10 @@ const delay = Math.floor(Math.random() * 5000);
         flex: 1;
         display: flex;
         flex-direction: column;
-        justify-content: center; /* Center content vertically */
+        justify-content: center;
         position: relative; /* For absolute positioning of children */
         text-align: left;
+        overflow: hidden; /* Prevent children from overflowing borders */
     }
 
     /* Center the loading component */
@@ -32,15 +33,20 @@ const delay = Math.floor(Math.random() * 5000);
         display: flex;
         justify-content: center;
         align-items: center;
-        width: 100%; /* Stretch to full width of the container */
-        height: 100%; /* Stretch to full height of the container */
-        position: absolute; /* Position centrally within DynamicContent */
+        position: absolute; /* Keep centered without stretching over borders */
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        padding: inherit; /* Ensure inner padding matches outer container */
+        pointer-events: none; /* Allow clicks to pass through to other components */
     }
 
     #slotComponent {
         width: 100%;
     }
 </style>
+
 
 <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
