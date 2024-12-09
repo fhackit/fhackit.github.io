@@ -6,6 +6,7 @@ import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import DynamicContent from "../components/DynamicContent.astro";
 import LastChanged from "../components/LastChanged.astro";
+import LoadingWrapper from "../components/LoadingWrapper.astro";
 
 type Props = {
     title: string;
@@ -30,7 +31,9 @@ const { title, last_modified } = Astro.props;
             <Header />
             <Navigation />
             <DynamicContent>
-                <slot />
+                <!-- <LoadingWrapper> -->
+                    <slot />
+                <!-- </LoadingWrapper> -->
             </DynamicContent>
             <LastChanged last_modified={`${last_modified}`} />
         </main>
@@ -40,9 +43,8 @@ const { title, last_modified } = Astro.props;
 
 <style>
     .content {
-    flex: 1; /* Allow main content to grow */
-    display: flex; /* Use flexbox for child alignment */
-    flex-direction: column; /* Stack children vertically */
-}
-
+        flex: 1; /* Allow main content to grow */
+        display: flex; /* Use flexbox for child alignment */
+        flex-direction: column; /* Stack children vertically */
+    }
 </style>
